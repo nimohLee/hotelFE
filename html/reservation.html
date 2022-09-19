@@ -20,6 +20,12 @@
         href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&family=Josefin+Sans:wght@600;700;800&family=Montserrat&display=swap"
         rel="stylesheet" />
 
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- style sheet -->
     <link rel="stylesheet" href="../css/reservation-style.css">
     <link rel="stylesheet" href="../media_query/reservation-media.css">
@@ -58,24 +64,240 @@
         </div>
 
         <main>
-            <div class="reservation-wrap">
+            <h1>Reservation</h1>
+            <div class="allContents-wrap">
+            
+            <section class="calander-wrap">  
+                    <div class="left-calander">
+                       <table>
+                        <tr>
+                            <th><span><</span></th>
+                            <th colspan="5">2022.09</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                            <th>토</th>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>1</td>
+                        </tr>
+                
+                    </table>
+                    </div>
+                    <div class="right-calander">
+                        <table>
+                            <tr>
+                                <th colspan="5">2022.10</th>
+                                <th></th>
+                                <th><span>></span></th>
+                            </tr>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td>31</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td>30</td>
+                                <td>1</td>
+                            </tr>
+                    
+                        </table>
+                    </div>
+               
+                <article class="detail-wrap">
+
+                </article>
+           
 
 
 
 
+            </section>
+            <section class="detail">
+                <div class="book-date-container">
+                    <label for="start" style="font-size: 1.5em;">체크인</label>
+                    <input type="text" class="date-output" name="start" id="start" max="2023-12-31" value disabled></div>
+                
+                <div class="book-date-container">
+                    <label for="end" style="font-size: 1.5em;">체크아웃</label>
+                    <input type="text"  class="date-output" name="end" id="end" max="2023-12-31" value disabled>
+                  </div>
 
-            </div>
+                <div class="selectBookInfo">
+                    <div class="item-count">
+                        <label >객실 수</label>
+                        <div class="item">
+                            <div class="item-quantity-button rooms-btn">
+                                <i class = "fal fa-plus"></i>
+                            </div>
+                            <input type="number" name="rooms" class="rooms" min="1" max="5" step="1" value="1" disabled>
+
+                            <div class="item-quantity-button">
+                                <i class = "fal fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-count">
+                        <label >성인</label>
+                        <div class="item">
+                            <div class="item-quantity-button adult-btn">
+                                <i class = "fal fa-plus"></i>
+                            </div>
+                            <input type="number" name="adults" class="adults" min="1" max="5" step="1" value="1" disabled>
+                            <div class="item-quantity-button">
+                                <i class = "fal fa-minus"></i>
+                            </div>
+                        </div>
+                            
+           
+                    </div>
+                    <div class="item-count">
+                        <label >아동</label>
+                        <div class="item">
+                            <div class="item-quantity-button kids-btn">
+                                <i class = "fal fa-plus"></i>
+                            </div>
+                            <input type="number" name="kids" class="kids" min="1" max="5" step="1" value="1" disabled>
+                            <div class="item-quantity-button">
+                                <i class = "fal fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button>객실 조회</button>
+            </section>
+        </div>
         </main>
 
     </div>
 
+    <script src="../js/loadPage.js"></script>
     <script>
-        // 페이지 로딩 딜레이주기
-        document.addEventListener('DOMContentLoaded', () => {
-            window.setTimeout(() => {
-                document.body.classList.remove('fade');
-            });
-        });
+        let roomCount = 1;
+        let adultCount = 1;
+        let kidsCount = 1;
+        const rooms = document.querySelector('.rooms');
+        const adult = document.querySelector('.adults');
+        const kids = document.querySelector('.kids');
+        $('input[name="dates"]').daterangepicker();
+        
+        
+        document.querySelector('.rooms-btn').addEventListener('click',(e) => {addCount(rooms)});
+        document.querySelector('.adult-btn').addEventListener('click',(e)=>{addCount(adult)});
+        document.querySelector('.kids-btn').addEventListener('click',(e)=>{addCount(kids)});
+        function addCount(props){
+          /* 여기부터 하기 !
+          버튼 클래스 이름 알아내는 함수, count알아내는 함수 호출하기*/ 
+          
+        }
+
+        function whatBtn(pram){
+            return pram.className;
+        }
+        function whatCount(pram){
+            if(pram.className=="rooms")
+                return roomCount;
+            else if(pram.className=="adults")
+                return adultCount;
+            else if(pram.className=="kids")
+                return kidsCount;
+        }
+
+        function 
     </script>
 
 </body>
