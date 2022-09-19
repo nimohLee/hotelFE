@@ -273,31 +273,31 @@
         const rooms = document.querySelector('.rooms');
         const adult = document.querySelector('.adults');
         const kids = document.querySelector('.kids');
-        $('input[name="dates"]').daterangepicker();
-        
-        
+    
         document.querySelector('.rooms-btn').addEventListener('click',(e) => {addCount(rooms)});
         document.querySelector('.adult-btn').addEventListener('click',(e)=>{addCount(adult)});
         document.querySelector('.kids-btn').addEventListener('click',(e)=>{addCount(kids)});
+        
+        /**
+         * 매개변수 : 버튼(+,- div) 클릭시 변경 될 숫자 input
+        */
         function addCount(props){
-          /* 여기부터 하기 !
-          버튼 클래스 이름 알아내는 함수, count알아내는 함수 호출하기*/ 
-          
+          props.value = plusCount(props);
         }
 
-        function whatBtn(pram){
-            return pram.className;
-        }
-        function whatCount(pram){
-            if(pram.className=="rooms")
-                return roomCount;
-            else if(pram.className=="adults")
-                return adultCount;
-            else if(pram.className=="kids")
-                return kidsCount;
+        /**
+         * 클릭하는 element에 따라 더해거나 빼야할 count를 1더한 후 리턴하는 함수
+        */
+        function plusCount(param){
+            if(param.className=="rooms")
+                return ++roomCount;
+            else if(param.className=="adults")
+                return ++adultCount;
+            else if(param.className=="kids")
+                return ++kidsCount;
         }
 
-        function 
+        
     </script>
 
 </body>
