@@ -23,7 +23,7 @@ const reveal = () => {
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().bottom; // getBoundigClientRect() -
-         elementVisible = 0;
+        elementVisible = 0;
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
@@ -46,6 +46,8 @@ const map = new naver.maps.Map("map", {
     zoom: 20,
 });
 
+const startDate = document.querySelector("#start");
+const endDate = document.querySelector("#end");
 const dateClass = new Date();
 const year = dateClass.getFullYear();
 const month =
@@ -57,21 +59,22 @@ const date =
         ? `0${dateClass.getDate() + 1}`
         : dateClass.getDate() + 1;
 
-document.getElementById("start").min = new Date()
-    .toISOString()
-    .substring(0, 10);
-document.getElementById("end").min = `${year}-${month}-${date}`;
+startDate.min = new Date().toISOString().substring(0, 10);
+
+/**
+ * startDate(datePicker)에 변경이 발생할 때마다 endDate(datePicker)의 최소 입력가능 날짜가 startDate+1로 설정됨
+ */
+startDate.addEventListener("change", (e) => {
+    const changedEndDate = new Date(Date.parse(startDate.value));
+    changedEndDate.setDate(changedEndDate.getDate() +1);
+    endDate.min = changedEndDate.toISOString().substring(0,10); 
+});
+
 
 function toReservation() {
-    const startDate = document.querySelector("#start");
-    const endDate = document.querySelector("#end");
-
-    if (startDate.value == "" || endDate.value == "") {
-        alert("체크인-체크아웃 날짜를 입력해주세요");
-        return false;
-    } else {
-        location.href = "./reservation.html";
-    }
+    localStorage.setItem("startDate", startDate.value);
+    localStorage.setItem("endDate", endDate.value);
+    location.href = "./reservation.html";
 }
 
 document.querySelector("#frm").addEventListener("submit", (e) => {

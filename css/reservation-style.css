@@ -119,20 +119,6 @@ main {
 
 /* main part */
 
-.bg {
-  background-image: url(/work/hotel/images/bed_image.jpg);
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.5;
-  position: relative;
-
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-
-}
   
   .logo {
     font-family: 'Josefin Sans', sans-serif;
@@ -183,7 +169,7 @@ main {
   /* main part */
   
   .bg {
-    background-image: url(/work/hotel/images/bed_image.jpg);
+    background-image: url(../images/bed_image.jpg);
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -208,7 +194,7 @@ main {
     align-items: center; */
     width: 80vw;
     height: 80vh;
-    top: 15vh;
+    top: 10vh;
     left: 10%;
     margin: 0 auto;
     z-index: 1;
@@ -217,13 +203,14 @@ main {
 
 main>h1{
   position:relative;
-  top: 100px;
+  top: 50px;
   text-align: center;
   
 }
+
 .allContents-wrap{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-rows: 70% 30%;
   width: 100%;
   height: 100%;
   background-color: white;
@@ -236,21 +223,25 @@ main>h1{
   padding: 10px;
 }
 
-.calander-wrap{
+.calender-wrap{
   display: flex;
-  justify-content: space-evenly;
+  width: 800px;
+  
+  justify-content: space-between;
 }
 .book-date-container{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   
 }
 .selectBookInfo{
+  margin-top: 10px;
   display: flex;
   justify-content: space-evenly;
 }
 .date-output{
-  width: 50%;
+  width: 150px;
+  margin-left: 30px;
   padding: 10px 0;
 }
 .item-count{
@@ -259,4 +250,16 @@ main>h1{
 }
 .item{
   display: flex;
+}
+.inquiryBtn{
+  
+  background-color: tomato;
+  color: white;
+  width: 100px;
+  height: 20px;
+}
+  .btnWrapForFlex{
+    display: flex;
+    justify-content: center;
+    margin-top : 20px;
 }

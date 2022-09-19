@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busan IT Hotel</title>
 
+    <link href='../node_modules/fullcalendar/main.css' rel='stylesheet' />
+    
+
     <!-- fontawesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -67,155 +70,21 @@
             <h1>Reservation</h1>
             <div class="allContents-wrap">
             
-            <section class="calander-wrap">  
-                    <div class="left-calander">
-                       <table>
-                        <tr>
-                            <th><span><</span></th>
-                            <th colspan="5">2022.09</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <th>일</th>
-                            <th>월</th>
-                            <th>화</th>
-                            <th>수</th>
-                            <th>목</th>
-                            <th>금</th>
-                            <th>토</th>
-                        </tr>
-                        <tr>
-                            <td>28</td>
-                            <td>29</td>
-                            <td>30</td>
-                            <td>31</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td>21</td>
-                            <td>22</td>
-                            <td>23</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td>28</td>
-                            <td>29</td>
-                            <td>30</td>
-                            <td>1</td>
-                        </tr>
-                
-                    </table>
-                    </div>
-                    <div class="right-calander">
-                        <table>
-                            <tr>
-                                <th colspan="5">2022.10</th>
-                                <th></th>
-                                <th><span>></span></th>
-                            </tr>
-                            <tr>
-                                <th>일</th>
-                                <th>월</th>
-                                <th>화</th>
-                                <th>수</th>
-                                <th>목</th>
-                                <th>금</th>
-                                <th>토</th>
-                            </tr>
-                            <tr>
-                                <td>28</td>
-                                <td>29</td>
-                                <td>30</td>
-                                <td>31</td>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                                <td>8</td>
-                                <td>9</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>12</td>
-                                <td>13</td>
-                                <td>14</td>
-                                <td>15</td>
-                                <td>16</td>
-                                <td>17</td>
-                            </tr>
-                            <tr>
-                                <td>18</td>
-                                <td>19</td>
-                                <td>20</td>
-                                <td>21</td>
-                                <td>22</td>
-                                <td>23</td>
-                                <td>24</td>
-                            </tr>
-                            <tr>
-                                <td>25</td>
-                                <td>26</td>
-                                <td>27</td>
-                                <td>28</td>
-                                <td>29</td>
-                                <td>30</td>
-                                <td>1</td>
-                            </tr>
-                    
-                        </table>
-                    </div>
-               
-                <article class="detail-wrap">
-
-                </article>
-           
-
-
-
-
+            <section class="calender-wrap">  
+                        <div id="calendar"></div>
+                        <div id="calendar2"></div>
             </section>
             <section class="detail">
                 <div class="book-date-container">
+                    <div class="start-wrap">
                     <label for="start" style="font-size: 1.5em;">체크인</label>
-                    <input type="text" class="date-output" name="start" id="start" max="2023-12-31" value disabled></div>
-                
-                <div class="book-date-container">
+                    <input type="text" class="date-output" name="start" id="start" max="2023-12-31" value disabled>
+                     </div>
+                    <div class="end-wrap">
                     <label for="end" style="font-size: 1.5em;">체크아웃</label>
                     <input type="text"  class="date-output" name="end" id="end" max="2023-12-31" value disabled>
                   </div>
-
+                </div>
                 <div class="selectBookInfo">
                     <div class="item-count">
                         <label >객실 수</label>
@@ -258,7 +127,7 @@
                     </div>
                     
                 </div>
-                <button>객실 조회</button>
+                <div class="btnWrapForFlex"><button class="inquiryBtn">객실 조회</button></div>
             </section>
         </div>
         </main>
@@ -266,40 +135,23 @@
     </div>
 
     <script src="../js/loadPage.js"></script>
+
+    <script src='../node_modules/fullcalendar/main.js'></script>
     <script>
-        let roomCount = 1;
-        let adultCount = 1;
-        let kidsCount = 1;
-        const rooms = document.querySelector('.rooms');
-        const adult = document.querySelector('.adults');
-        const kids = document.querySelector('.kids');
-    
-        document.querySelector('.rooms-btn').addEventListener('click',(e) => {addCount(rooms)});
-        document.querySelector('.adult-btn').addEventListener('click',(e)=>{addCount(adult)});
-        document.querySelector('.kids-btn').addEventListener('click',(e)=>{addCount(kids)});
-        
-        /**
-         * 매개변수 : 버튼(+,- div) 클릭시 변경 될 숫자 input
-        */
-        function addCount(props){
-          props.value = plusCount(props);
-        }
-
-        /**
-         * 클릭하는 element에 따라 더해거나 빼야할 count를 1더한 후 리턴하는 함수
-        */
-        function plusCount(param){
-            if(param.className=="rooms")
-                return ++roomCount;
-            else if(param.className=="adults")
-                return ++adultCount;
-            else if(param.className=="kids")
-                return ++kidsCount;
-        }
-
-        
+         document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendarEl2 = document.getElementById('calendar2');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        var calendar2 = new FullCalendar.Calendar(calendarEl2, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+        calendar2.render();
+      });
     </script>
-
+    <script src="../js/reservation-view.js"></script>
 </body>
 
 </html>
